@@ -1,0 +1,30 @@
+.inputs {
+	display: flex;
+	flex-direction: column;
+}
+
+.inputs-card {
+  margin: auto;
+  max-width: 300px;
+  margin-top: 16px;
+}
+
+.inputs .stocks {
+	display: flex;
+	flex-direction: row;
+}
+
+h1 {
+  text-align: center;
+}
+
+body {
+  min-height: 100%;
+  background-color: #f8fbff;
+}
+
+.comparation-card {
+  margin: auto;
+  max-width: 800px;
+  margin-top: 32px;
+}

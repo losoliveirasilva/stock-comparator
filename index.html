@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="index.css" rel="stylesheet">
+    <script src="index.js"></script>
+    <title>Comparador de ações</title>
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <h1>Comparador de ações</h1>
+      <div class="card shadow inputs-card">
+        <div class="card-body">
+          <div class="inputs">
+            <div class="stocks">
+              <div class="form-group mr-2">
+                <input type="text" class="form-control" id="stock-1" placeholder="Primeira">
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="stock-2" placeholder="Segunda">
+              </div>
+            </div>
+
+            <div>
+              <button type="button" class="btn btn-primary compare-btn w-100">Comparar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card shadow comparation-card" style="display: none;">
+        <div class="card-body">
+          <div class="comparation">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
