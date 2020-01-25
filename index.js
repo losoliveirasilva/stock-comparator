@@ -1,4 +1,4 @@
-const showComparationCard = (first, second) => {
+const comparisonReady = (first, second) => {
   if(first && second){
     $(".comparation-card").show();
   }
@@ -14,16 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetch(`${baseUrl}${$("#stock-1").val()}`).then(response => response.text()).then(data => {
       doc = parser.parseFromString(data, "text/html")
-      $(".comparation").append(doc.querySelectorAll(".atual strong")[0].innerHTML);
+      $(".company-code#company-code-stock-1").append(doc.querySelectorAll(".conteudo table tr td span")[2].innerHTML);
+      $(".company-name#company-name-stock-1").append(doc.querySelectorAll(".conteudo table tr td span")[14].innerHTML);
+      $(".company-value#company-value-stock-1").append(`R$ ${doc.querySelectorAll(".conteudo table tr td span")[38].innerHTML}`);
+      $(".company-patrimony#company-patrimony-stock-1").append(`R$ ${doc.querySelectorAll(".conteudo table tr td span")[150].innerHTML}`);
+
       firstReady = true;
-      showComparationCard(firstReady, secondReady);
+      comparisonReady(firstReady, secondReady);
     })
 
     fetch(`${baseUrl}${$("#stock-2").val()}`).then(response => response.text()).then(data => {
       doc = parser.parseFromString(data, "text/html")
-      $(".comparation").append(doc.querySelectorAll(".atual strong")[0].innerHTML);
+      $(".company-code#company-code-stock-2").append(doc.querySelectorAll(".conteudo table tr td span")[2].innerHTML);
+      $(".company-name#company-name-stock-2").append(doc.querySelectorAll(".conteudo table tr td span")[14].innerHTML);
+      $(".company-value#company-value-stock-2").append(`R$ ${doc.querySelectorAll(".conteudo table tr td span")[38].innerHTML}`);
+      $(".company-patrimony#company-patrimony-stock-2").append(`R$ ${doc.querySelectorAll(".conteudo table tr td span")[150].innerHTML}`);
+
       secondReady = true;
-      showComparationCard(firstReady, secondReady);
+      comparisonReady(firstReady, secondReady);
     })
   });
 });

@@ -18,6 +18,10 @@ h1 {
   text-align: center;
 }
 
+h5 {
+  text-align: center;
+}
+
 body {
   min-height: 100%;
   background-color: #f8fbff;
@@ -27,4 +31,27 @@ body {
   margin: auto;
   max-width: 800px;
   margin-top: 32px;
+}
+
+.comparations {
+  display: flex;
+}
+
+.comparation {
+  width: 40%;
+}
+
+.company-name {
+  font-style: italic !important;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+.category-border {
+  border-bottom: 1px solid;
 }
