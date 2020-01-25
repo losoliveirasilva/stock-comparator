@@ -36,7 +36,7 @@ const populateTable = (firstStock, secondStock) => {
   $(".company-code#company-code-stock-1").append(firstStock["code"]);
   $(".company-code#company-code-stock-2").append(secondStock["code"]);
 
-  $(".company-name#company-name-stock-2").append(firstStock["name"]);
+  $(".company-name#company-name-stock-1").append(firstStock["name"]);
   $(".company-name#company-name-stock-2").append(secondStock["name"]);
 
   $(".company-value#company-value-stock-1").append(`R$ ${firstStock["value"]}`);
