@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
     secondStockInput = $("#stock-2").val();
 
     if(firstStockInput == ""  || secondStockInput == ""){
-      firstStockInput = "wege3";
-      secondStockInput = "abev3";
+      firstStockInput = "itub3";
+      secondStockInput = "bbas3";
     }
 
     $(".comparation-card").show();
