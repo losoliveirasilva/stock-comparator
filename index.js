@@ -94,12 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let firstReady = false;
     let secondReady = false;
 
-    fetch(`${baseUrl}${firstStockInput}`).then(response => response.text()).then(data => {
+    fetch(`${baseUrl}${firstStockInput}`, { headers: { "Content-Type": "text/html", "encoding": "iso-8859-1" } }).then(response => response.text()).then(data => {
       doc = parser.parseFromString(data, "text/html");
 
       firstStock["code"] = doc.querySelectorAll(".conteudo table tr td span")[2].innerHTML;
       firstStock["name"] = doc.querySelectorAll(".conteudo table tr td span")[14].innerHTML;
-      firstStock["value"] = doc.querySelectorAll(".conteudo table tr td span")[38].innerHTML;
+      firstStock["value"] = doc.querySelectorAll(".conteudo table tr td span")[32].innerHTML;
       firstStock["patrimony"] = doc.querySelectorAll(".conteudo table tr td span")[150].innerHTML;
       firstStock["debt"] = doc.querySelectorAll(".conteudo table tr td span")[138].innerHTML;
 
@@ -107,12 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
       comparisonReady(firstReady, firstStock, secondReady, secondStock);
     })
 
-    fetch(`${baseUrl}${secondStockInput}`).then(response => response.text()).then(data => {
+    fetch(`${baseUrl}${secondStockInput}`, { headers: { "Content-Type": "text/html", "encoding": "iso-8859-1" } }).then(response => response.text()).then(data => {
       doc = parser.parseFromString(data, "text/html");
 
       secondStock["code"] = doc.querySelectorAll(".conteudo table tr td span")[2].innerHTML;
       secondStock["name"] = doc.querySelectorAll(".conteudo table tr td span")[14].innerHTML;
-      secondStock["value"] = doc.querySelectorAll(".conteudo table tr td span")[38].innerHTML;
+      secondStock["value"] = doc.querySelectorAll(".conteudo table tr td span")[32].innerHTML;
       secondStock["patrimony"] = doc.querySelectorAll(".conteudo table tr td span")[150].innerHTML;
       secondStock["debt"] = doc.querySelectorAll(".conteudo table tr td span")[138].innerHTML;
 
