@@ -52,6 +52,22 @@ table {
   text-align: center;
 }
 
+table th {
+  width: 33.333%;
+}
+
 .category-border {
   border-bottom: 1px solid;
+}
+
+.company-information {
+  color: #AA0000;
+}
+
+.better-value {
+  color: #00AA00;
+}
+
+.tie-value {
+  color: #DDDD00;
 }
