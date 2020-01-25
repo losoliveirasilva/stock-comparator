@@ -83,3 +83,8 @@ table th {
   padding: 10px;
   font-size: 12px;
 }
+
+.loading {
+  padding: 30px;
+  margin: auto;
+}

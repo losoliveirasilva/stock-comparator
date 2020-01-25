@@ -33,37 +33,39 @@ const populateTable = (firstStock, secondStock) => {
   firstHash = {};
   secondHash = {};
 
-  $(".company-code#company-code-stock-1").append(firstStock["code"]);
-  $(".company-code#company-code-stock-2").append(secondStock["code"]);
+  $(".company-code#company-code-stock-1").html(firstStock["code"]);
+  $(".company-code#company-code-stock-2").html(secondStock["code"]);
 
-  $(".company-name#company-name-stock-1").append(firstStock["name"]);
-  $(".company-name#company-name-stock-2").append(secondStock["name"]);
+  $(".company-name#company-name-stock-1").html(firstStock["name"]);
+  $(".company-name#company-name-stock-2").html(secondStock["name"]);
 
-  $(".company-value#company-value-stock-1").append(`R$ ${firstStock["value"]}`);
-  $(".company-value#company-value-stock-2").append(`R$ ${secondStock["value"]}`);
+  $(".company-value#company-value-stock-1").html(`R$ ${firstStock["value"]}`);
+  $(".company-value#company-value-stock-2").html(`R$ ${secondStock["value"]}`);
   firstHash["value"] = firstStock["value"];
   firstHash["class"] = ".company-value#company-value-stock-1"
   secondHash["value"] = secondStock["value"];
   secondHash["class"] = ".company-value#company-value-stock-2"
   compareValues(firstHash, secondHash, true);
 
-  $(".company-patrimony#company-patrimony-stock-1").append(`R$ ${firstStock["patrimony"]}`);
-  $(".company-patrimony#company-patrimony-stock-2").append(`R$ ${secondStock["patrimony"]}`);
+  $(".company-patrimony#company-patrimony-stock-1").html(`R$ ${firstStock["patrimony"]}`);
+  $(".company-patrimony#company-patrimony-stock-2").html(`R$ ${secondStock["patrimony"]}`);
   firstHash["value"] = firstStock["patrimony"];
   firstHash["class"] = ".company-patrimony#company-patrimony-stock-1"
   secondHash["value"] = secondStock["patrimony"];
   secondHash["class"] = ".company-patrimony#company-patrimony-stock-2"
   compareValues(firstHash, secondHash, true);
 
-  $(".company-debt#company-debt-stock-1").append(`R$ ${firstStock["debt"]}`);
-  $(".company-debt#company-debt-stock-2").append(`R$ ${secondStock["debt"]}`);
+  $(".company-debt#company-debt-stock-1").html(`R$ ${firstStock["debt"]}`);
+  $(".company-debt#company-debt-stock-2").html(`R$ ${secondStock["debt"]}`);
   firstHash["value"] = firstStock["debt"];
   firstHash["class"] = ".company-debt#company-debt-stock-1"
   secondHash["value"] = secondStock["debt"];
   secondHash["class"] = ".company-debt#company-debt-stock-2"
   compareValues(firstHash, secondHash, false);
 
+  $(".loading").hide();
   $(".comparation-card").show();
+  $(".comparation-card-body").show();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -77,9 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
     firstStockInput = $("#stock-1").val();
     secondStockInput = $("#stock-2").val();
 
-    if(firstStock == ""  || secondStock == ""){
-      return;
+    if(firstStockInput == ""  || secondStockInput == ""){
+      firstStockInput = "wege3";
+      secondStockInput = "abev3";
     }
+
+    $(".comparation-card").show();
+    $(".comparation-card-body").hide();
+    $(".loading").show();
+
+    $(".company-information").removeClass("tie-value");
+    $(".company-information").removeClass("better-value");
 
     let firstReady = false;
     let secondReady = false;

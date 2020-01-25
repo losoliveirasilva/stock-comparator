@@ -7,6 +7,7 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3aa4253b66.js" crossorigin="anonymous"></script>
     <link href="index.css" rel="stylesheet">
     <script src="index.js"></script>
     <title>Comparador de ações</title>
@@ -36,7 +37,8 @@
       </div>
 
       <div class="card shadow comparation-card" style="display: none;">
-        <div class="card-body">
+        <div class="loading"><i class="fas fa-spinner fa-spin fa-4x"></i></div>
+        <div class="card-body comparation-card-body" style="display: none;">
           <table>
             <tr>
               <th class="company-code" id="company-code-stock-1"></th>
