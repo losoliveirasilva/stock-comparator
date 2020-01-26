@@ -88,3 +88,13 @@ table th {
   padding: 30px;
   margin: auto;
 }
+
+.percentege {
+  font-size: 12px;
+  font-style: italic !important;
+}
+
+.card-footer-font {
+  font-size: 12px;
+  font-style: italic !important;
+}

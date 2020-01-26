@@ -4,6 +4,10 @@ const comparisonReady = (firstReady, firstStock, secondReady, secondStock) => {
   }
 }
 
+const formatPercentage = (first, second) => {
+  return `<span class="percentege">(${parseFloat((100*(first/second)).toFixed(2)).toLocaleString('pt-BR')}%)</span>`;
+}
+
 const compareValues = (first, second, greater) => {
   firstValue = parseInt(first["value"].replace(/\./g, ""))
   secondValue = parseInt(second["value"].replace(/\./g, ""))
@@ -11,8 +15,10 @@ const compareValues = (first, second, greater) => {
   if(greater){
     if(firstValue > secondValue) {
       $(first["class"]).addClass("better-value");
+      $(second["class"]).append(` ${formatPercentage(secondValue, firstValue)}`)
     } else if(firstValue < secondValue){
       $(second["class"]).addClass("better-value");
+      $(first["class"]).append(` ${formatPercentage(firstValue, secondValue)}`)
     } else {
       $(first["class"]).addClass("tie-value");
       $(second["class"]).addClass("tie-value");
@@ -20,8 +26,10 @@ const compareValues = (first, second, greater) => {
   } else {
     if(firstValue < secondValue) {
       $(first["class"]).addClass("better-value");
+      $(second["class"]).append(` ${formatPercentage(secondValue, firstValue)}`)
     } else if(firstValue > secondValue){
       $(second["class"]).addClass("better-value");
+      $(first["class"]).append(` ${formatPercentage(firstValue, secondValue)}`)
     } else {
       $(first["class"]).addClass("tie-value");
       $(second["class"]).addClass("tie-value");
